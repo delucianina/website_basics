@@ -1,0 +1,52 @@
+/* Reset Styles */
+/* ------------------------------------------------- */
+body {
+    background: lightgray;
+    margin: 0;
+    font-family: Poppins, sans-serif;
+}
+
+h3 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Custom Styles */
+/* ------------------------------------------------- */
+header {
+    /* Aligns the direct children on a row left to right */
+    display: flex;
+    /* ONCE YOU SET DISPLAY TO FLEX, you can align items vertically and horizontally with flexbox properties */
+    /* Align Items will align direct children on the y-axis (top-to-bottom) */
+    align-items: center;
+    /* Push the direct children as far apart as possible using the space between them (x-axis)*/
+    /* justify-content: space-between; */
+    background: #1d1f35e0;
+    padding: 25px 7% 20px; 
+}
+
+header nav {
+    margin-left: 150px;
+}
+
+header a.active {
+    color: #ff9bb2;
+}
+
+header nav a {
+    color: #fff;
+    margin-right: 10px;
+}
+
+header a:hover, header a.active {
+    text-decoration: underline;
+}
+
+/* Selects all links except the last one */
+/* header nav a:not( :last-child) {
+    color: red;
+} */
