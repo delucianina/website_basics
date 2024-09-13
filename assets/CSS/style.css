@@ -1,9 +1,22 @@
+/* Variables */
+/* ------------------------------------------------- */
+/* Root is a psuedo-selector that selects the root of the document - the HTML. You can scope a variable smaller than this, read documentation*/
+:root {
+    --highlightColor: #3affde;
+}
+
+
+
+
+
+
 /* Reset Styles */
 /* ------------------------------------------------- */
 body {
-    background: lightgray;
+    background: rgb(53, 56, 68);
     margin: 0;
     font-family: Poppins, sans-serif;
+    overflow-x: hidden;
 }
 
 h3 {
@@ -15,6 +28,44 @@ a {
     color: #fff;
 }
 
+
+
+
+
+
+/* Animations */
+/* ------------------------------------------------- */
+@keyframes slide-n-fade-in {
+    /* You can use "from" and "to" if you only have 2 keys */
+    /* First key */
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    /* middle frames can be 0.x% */
+    50% {
+        transform: translateX(5%);
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* @keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
+
+
+
+
+
+
 /* Custom Styles */
 /* ------------------------------------------------- */
 header {
@@ -25,7 +76,7 @@ header {
     align-items: center;
     /* Push the direct children as far apart as possible using the space between them (x-axis)*/
     /* justify-content: space-between; */
-    background: #1d1f35e0;
+    background: #1b1c30e0;
     padding: 25px 7% 20px; 
 }
 
@@ -34,7 +85,7 @@ header nav {
 }
 
 header a.active {
-    color: #ff9bb2;
+    color: #ff498f;
 }
 
 header nav a {
@@ -50,3 +101,75 @@ header a:hover, header a.active {
 /* header nav a:not( :last-child) {
     color: red;
 } */
+
+main {
+    display: flex;
+    /* Display flex puts everything on the same line; justfy content space between puts them as far apart as possible with all the space between */
+    justify-content: space-between;
+    padding: 45px 3% 0 10%;
+}
+
+section p {
+    /* color: #3affc4; */
+    color: var(--highlightColor);
+}
+
+section h1 {
+    color: #fff;
+    font-size: 3em;
+    text-transform: uppercase;
+    margin: 0 0 25px;
+    animation: slide-n-fade-in 1s;
+}
+
+section button {
+    background: none;
+    border: 3px solid var(--highlightColor);
+    /* padding: 15px 25px; */
+    padding: 0 0 0 15px;
+    color: #fff;
+    text-transform: uppercase;
+    /* Change the cursor into a pointing finger when hovering over the button in the browser */
+    cursor: pointer;
+    /* The display and align items is aligning the text vertically */
+    display: flex;
+    align-items: center;
+    /* Don't go outside of 0.2 - 0.7s, typically */
+    transition: all 0.25s;
+}
+
+section button i {
+    color: #1b1c30e0;
+    font-size: 1.5rem;
+    background: var(--highlightColor);
+    padding: 10px 15px;
+    margin-left: 15px;
+}
+
+section button:hover {
+    background: #3aff934f;
+    color: #fff;
+    /* When a transform is animated, your GPU will activate and do it */
+    transform: translateX(0.65em);
+}
+
+aside {
+    display: flex;
+    align-items: center;
+    transform: rotate(90deg);
+    /* Move relative to current position */
+    position: relative;
+    /* Move, relative to current position, move down from the top 50px */
+    top: 50px;
+    left: 100px;
+}
+
+aside p {
+    color: var(--highlightColor);
+    margin-right: 25px;
+}
+
+aside i {
+    color: #fff;
+    margin-right: 10px;
+}
