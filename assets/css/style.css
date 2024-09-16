@@ -129,7 +129,7 @@ main {
     background-color: rgb(53, 56, 68);
     background-repeat: no-repeat; 
     background-size: 35%;
-    background-position: right 15% top 20%;
+    background-position: right 25% top 20%;
     /* Tell main to fill remaining space in it's column. */
     flex: 1;
 }
@@ -207,3 +207,22 @@ footer {
     padding: 30px 7%;
     color: rgb(180, 180, 180);
 }
+
+
+
+
+
+
+/* Media Queries */
+/* ------------------------------------------------- */
+/* Target computer screen, print-ready screen, or both. Don't specify for both */
+@media (max-width: 700px) {
+    main {
+        background-image: url(../img/Nina_Avatar_round.png);
+        background-color: rgb(53, 56, 68);
+        background-repeat: no-repeat; 
+        background-size: 35%;
+        background-position: right 15% top 20%;
+    }
+}
+
