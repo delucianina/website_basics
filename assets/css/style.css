@@ -12,11 +12,19 @@
 
 /* Reset Styles */
 /* ------------------------------------------------- */
+
+html, body {
+    height: 100%;
+}
+
 body {
     background: rgb(53, 56, 68);
     margin: 0;
     font-family: Poppins, sans-serif;
     overflow-x: hidden;
+    display: flex;
+    /* Tell flexbox to flip axis - make X into Y, and make Y into X so that the website falls top to bottom */
+    flex-direction: column;
 }
 
 h3 {
@@ -107,6 +115,23 @@ main {
     /* Display flex puts everything on the same line; justfy content space between puts them as far apart as possible with all the space between */
     justify-content: space-between;
     padding: 45px 3% 0 10%;
+    /* Class example style */
+    /* ------------ */
+    /* ------------ */
+    /* Make 2 layers. Displays gradient on top of photo */
+    /* background-repeat: no-repeat; 
+    background-size: contain; */
+    /* background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)), url(../img/Nina_Avatar_round.png); */
+    /* ------------ */
+    /* ------------ */
+    /* My style */
+    background-image: url(../img/Nina_Avatar_round.png);
+    background-color: rgb(53, 56, 68);
+    background-repeat: no-repeat; 
+    background-size: 35%;
+    background-position: right 15% top 20%;
+    /* Tell main to fill remaining space in it's column. */
+    flex: 1;
 }
 
 section p {
@@ -172,4 +197,13 @@ aside p {
 aside i {
     color: #fff;
     margin-right: 10px;
+}
+
+footer {
+    background-color: #292a3dd0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding: 30px 7%;
+    color: rgb(180, 180, 180);
 }
