@@ -27,6 +27,10 @@ body {
     flex-direction: column;
 }
 
+h2 {
+    color: #fff;
+}
+
 h3 {
     margin: 0;
 }
@@ -92,6 +96,18 @@ header nav {
     margin-left: 150px;
 }
 
+/* Use pseudo element to add an element before an element in every instance specified */
+header nav a:hover::before, header nav a:active::before {
+    /* REQUIRE YOU SET OR ADD A CONTENT PROPERTY - can make an empty string if you don't want one */
+    content: '';
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    /* Set the header nav a to position relative to make this work */
+    position: absolute;
+    bottom: -1px;
+}
+
 header a.active {
     color: #ff498f;
 }
@@ -99,10 +115,8 @@ header a.active {
 header nav a {
     color: #fff;
     margin-right: 10px;
-}
-
-header a:hover, header a.active {
-    text-decoration: underline;
+    position: relative;
+    text-decoration: none;
 }
 
 /* Selects all links except the last one */
@@ -132,6 +146,10 @@ main {
     background-position: right 25% top 20%;
     /* Tell main to fill remaining space in it's column. */
     flex: 1;
+}
+
+section.info {
+    padding: 100px 7% 0; 
 }
 
 section p {
@@ -206,6 +224,26 @@ footer {
     margin-top: 25px;
     padding: 30px 7%;
     color: rgb(180, 180, 180);
+}
+
+/* When making something that should be in front of the layers - like a help chat - make the z-index something crazy to avoid confusion  */
+.chat {
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    z-index: 500;
+}
+
+.chat button {
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--highlightColor);
+    padding: 7px 15px;
+    color: #fff;
+    /* Make the element a circle */
+    /* width: 75px;
+    height: 75px;
+    border-radius: 50%; */
+    border-radius: 6px;
 }
 
 
